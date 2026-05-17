@@ -24,16 +24,15 @@ namespace HW2
         private bool isFlipping = false;
         private bool isPreviewing = false;
 
-        // --- 新增的遊戲進度變數 ---
         private int timeLeft = 120;
-        private int previewTimeLeft = 5; // 預覽倒數 5 秒
-        private int matchedPairs = 0;    // 紀錄成功配對了幾組
-                                         // --- 音效與音樂設定 ---
+        private int previewTimeLeft = 5; //預覽倒數 5 秒
+        private int matchedPairs = 0;    //紀錄成功配對組數
+
         private SoundPlayer clickPlayer;
         private SoundPlayer winPlayer;
         private SoundPlayer failPlayer;
 
-        // 呼叫 Windows 系統底層的播音 API (專門給背景音樂用，才不會被點擊聲切斷)
+        // 呼叫 Windows 系統底層的播音 API
         private WMPLib.WindowsMediaPlayer bgmPlayer = new WMPLib.WindowsMediaPlayer();
 
         public Form1()
@@ -45,7 +44,7 @@ namespace HW2
         {
             SetupGame();
 
-            // 遊戲剛打開時，先隱藏預覽倒數的標籤
+            //遊戲剛打開時，隱藏預覽倒數的標籤
             label2.Visible = false;
         }
 
@@ -62,12 +61,12 @@ namespace HW2
                     all52Cards.Add((Image)obj);
                 }
             }
-            // 括號裡面請換成你剛剛拉進 Resources 的音效名稱
+            //音效
             clickPlayer = new SoundPlayer(Properties.Resources.poker_flip);
             winPlayer = new SoundPlayer(Properties.Resources.victory);
             failPlayer = new SoundPlayer(Properties.Resources.fail);
 
-           // 2.處理背景音樂(抽出暫存檔給系統播放)
+           //處理背景音樂
             string bgmPath = Path.Combine(Application.StartupPath, "temp_bgm.wav");
             using (Stream stream = Properties.Resources.background)
             using (FileStream fileStream = new FileStream(bgmPath, FileMode.Create))
@@ -75,9 +74,10 @@ namespace HW2
                 stream.CopyTo(fileStream);
             }
             bgmPlayer.URL = bgmPath;
-            bgmPlayer.settings.setMode("loop", true); // 設定為無限循環播放
-            bgmPlayer.controls.stop(); // 先讓它暫停，等按下 Start 按鈕再播
-            // 🚨 將預覽計時器改為 1 秒 (1000毫秒) 觸發一次，這樣才能做倒數動畫
+            bgmPlayer.settings.setMode("loop", true); //設定為無限循環播放
+            bgmPlayer.controls.stop(); //按下Start播放
+
+            //預覽計時器
             previewTimer.Interval = 1000;
             previewTimer.Tick -= previewTimer_Tick;
             previewTimer.Tick += previewTimer_Tick;
@@ -106,15 +106,15 @@ namespace HW2
         {
             if (isPreviewing || all52Cards.Count < 52) return;
 
-            // 重置所有遊戲數值
+            //重置所有遊戲數值
             gameTimer.Stop();
             timeLeft = 120;
-            matchedPairs = 0; // 配對數量歸零
-            previewTimeLeft = 5; // 預覽時間重置為 5 秒
+            matchedPairs = 0; //配對數量歸零
+            previewTimeLeft = 5; //預覽時間重置為 5 秒
 
             label1.Text = "剩餘時間： 120秒";
             label2.Text = $"預覽倒數： {previewTimeLeft}秒";
-            label2.Visible = true; // 顯示預覽標籤
+            label2.Visible = true; //顯示預覽標籤
             bgmPlayer.controls.play();
             Random rnd = new Random();
 
@@ -183,13 +183,13 @@ namespace HW2
                 firstClicked = null;
                 secondClicked = null;
 
-                // 🚨 答對了！將配對成功組數 +1
+                // 配對成功組數+1
                 matchedPairs++;
 
-                // 檢查是否 8 組全滿
+                //檢查是否8組全滿
                 if (matchedPairs >= 8)
                 {
-                    gameTimer.Stop(); // 贏了就停止倒數
+                    gameTimer.Stop(); //贏了 停止倒數
                     bgmPlayer.controls.stop();
                     winPlayer.Play();
                     MessageBox.Show($"太厲害了！你用了 {120 - timeLeft} 秒完成遊戲！\n點擊start重新開始", "恭喜過關");
@@ -204,11 +204,11 @@ namespace HW2
 
         private void previewTimer_Tick(object sender, EventArgs e)
         {
-            // 每秒觸發一次，把時間減 1
+            //每秒觸發一次，把時間減 1
             previewTimeLeft--;
             label2.Text = $"預覽倒數： {previewTimeLeft}秒";
 
-            // 當倒數到 0 時，才真正蓋牌
+            //蓋牌
             if (previewTimeLeft <= 0)
             {
                 previewTimer.Stop();
@@ -220,9 +220,9 @@ namespace HW2
                     }
                 }
 
-                label2.Visible = false; // 預覽結束，隱藏倒數標籤
+                label2.Visible = false; //預覽結束，隱藏倒數標籤
                 isPreviewing = false;
-                gameTimer.Start();      // 正式開始 120 秒遊戲倒數
+                gameTimer.Start();      //120秒倒數
             }
         }
 
