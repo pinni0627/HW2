@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,194 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mistake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poker_flip.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\victory.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fail.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
